@@ -1,5 +1,5 @@
 require_relative 'config/environment'
-
+require 'pry'
 class App < Sinatra::Base
   get '/reversename/:name' do
     params[:name].reverse
@@ -14,6 +14,7 @@ class App < Sinatra::Base
     @phrase = params[:phrase]
     @number = params[:number].to_i
     counter = 0
+    binding.pry
     while counter > @number
       puts "#{@phrase}"
       counter += 1
